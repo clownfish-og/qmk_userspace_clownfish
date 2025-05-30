@@ -5,6 +5,8 @@
         ["keebio/iris/rev3", "clownfish"],
         ["bolsa/damapad", "clownfish"],
         ["keychron/v6/ansi", "clownfish"],
-        ["kprepublic/cstc40/rev3", "clownfish"]
+        ["kprepublic/cstc40/rev3", "clownfish"],
+        ["sneakbox/lilbae", "clownfish_bae"],
+        ["sneakbox/lilbae", "clownfish_iso"]
     ]
 }
