@@ -4,6 +4,7 @@
         ["ymdk/ymd09", "clownfish"],
         ["keebio/iris/rev3", "clownfish"],
         ["bolsa/damapad", "clownfish"],
-        ["keychron/v6/ansi", "clownfish"]
+        ["keychron/v6/ansi", "clownfish"],
+        ["kprepublic/cstc40/rev3", "clownfish"]
     ]
 }
