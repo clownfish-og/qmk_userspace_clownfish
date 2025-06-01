@@ -6,6 +6,8 @@
         ["doio/kb03", "doio"],
         ["doio/kb03", "vial_clownfish"],
         ["doio/kb16/rev2", "vial_clownfish"],
+        ["fjlabs/ad65", "clownfish"],
+        ["fjlabs/ad65", "clownfish_tsangan"],
         ["keebio/iris/rev3", "clownfish"],
         ["keychron/v6/ansi", "clownfish"],
         ["keychron/v6/ansi", "test"],
