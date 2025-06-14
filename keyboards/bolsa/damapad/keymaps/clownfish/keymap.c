@@ -15,21 +15,72 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "keycodes.h"
+#include "quantum.h"
 #include QMK_KEYBOARD_H
+
+enum my_keycodes {
+    NUL = QK_KB,
+    INDEX,
+    DESC,
+    AVS,
+    BOM,
+    QTY
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_bar(
-                                                      KC_MUTE,
-        KC_MPRV, KC_MPLY, KC_MNXT, KC_MSTP, KC_MSEL,
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   C(KC_C),
-                 KC_COPY,          KC_ENT,           C(S(KC_V))
-    )
-
+        NUL,     KC_C,    KC_V,    KC_COLN, KC_DEL,  KC_MUTE,
+        INDEX,   DESC,    AVS,     BOM,     QTY,     MO(1),
+                 KC_ENT,           KC_LCTL,          KC_ENT
+    ),
+    [1] = LAYOUT_bar(
+        _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,
+                 _______,          _______,          _______
+    ),
 };
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLD)}
+    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLD)},
+    [1] = { ENCODER_CCW_CW(KC_VOLU, KC_VOLU)}
 };
 #endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case NUL:
+            if (record->event.pressed) {
+                SEND_STRING("null");
+            }
+            return false;
+        case INDEX:
+            if (record->event.pressed) {
+                SEND_STRING("INDEX");
+            }
+            return false;
+        case DESC:
+            if (record->event.pressed) {
+                SEND_STRING("DESC");
+            }
+            return false;
+        case AVS:
+            if (record->event.pressed) {
+                SEND_STRING("AVS");
+            }
+            return false;
+        case BOM:
+            if (record->event.pressed) {
+                SEND_STRING("BOM");
+            }
+            return false;
+        case QTY:
+            if (record->event.pressed) {
+                SEND_STRING("QTY");
+            }
+            return false;
+    }
+    return true;
+}
