@@ -2,6 +2,7 @@
     "userspace_version": "1.1",
     "build_targets": [
         ["bolsa/damapad", "clownfish"],
+        ["buppad/25", "clownfish"],
         ["doio/kb03", "clownfish"],
         ["doio/kb03", "doio"],
         ["doio/kb03", "vial_clownfish"],
