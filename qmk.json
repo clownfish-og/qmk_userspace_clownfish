@@ -3,6 +3,7 @@
     "build_targets": [
         ["bolsa/damapad", "clownfish"],
         ["buppad/25", "clownfish"],
+        ["buppad/25", "werty"],
         ["doio/kb03", "clownfish"],
         ["doio/kb03", "doio"],
         ["doio/kb03", "vial_clownfish"],
