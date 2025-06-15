@@ -21,3 +21,8 @@ led_config_t g_led_config = {
     1, 1, 1, 1
   },
 };
+
+void board_init(void) {
+    gpio_set_pin_output(A10);
+    gpio_write_pin_low(A10);
+}
