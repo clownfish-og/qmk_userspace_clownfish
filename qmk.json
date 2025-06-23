@@ -1,30 +1,8 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["bolsa/damapad", "clownfish"],
-        ["buppad/25", "clownfish"],
-        ["buppad/25", "werty"],
-        ["doio/kb03", "clownfish"],
-        ["doio/kb03", "doio"],
         ["doio/kb03", "vial_clownfish"],
-        ["doio/kb16/rev2", "vial_clownfish"],
-        ["doio/kb16/rev2", "vial_general"],
-        ["fjlabs/ad65", "clownfish"],
-        ["fjlabs/ad65", "clownfish_tsangan"],
-        ["keebio/iris/rev3", "clownfish"],
-        ["keychron/v6/ansi", "clownfish"],
-        ["keychron/v6/ansi", "test"],
-        ["keychron/v6/ansi", "vial_clownfish"],
-        ["keychron/v6/ansi", "vial_clownfish_bae"],
-        ["kprepublic/cstc40/rev3", "clownfish"],
         ["kprepublic/cstc40/rev3", "vial_clownfish"],
-        ["sneakbox/lilbae", "clownfish_bae"],
-        ["sneakbox/lilbae", "clownfish_iso"],
-        ["sneakbox/lilbae", "vial_clownfish"],
-        ["wind/x98", "vial_clownfish"],
-        ["winry/winry25tc", "via"],
-        ["yandrstudio/sam40", "clownfish"],
-        ["yandrstudio/sam40", "vial_clownfish"],
-        ["ymdk/ymd09", "clownfish"]
+        ["wind/x98", "vial_clownfish"]
     ]
 }
