@@ -14,7 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "keyboards/keychron/v6/ansi/keymaps/vial_clownfish/config.h"
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
 #include <lib/lib8tion/lib8tion.h>
