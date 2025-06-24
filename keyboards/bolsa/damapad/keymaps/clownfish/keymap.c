@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 enum my_keycodes {
-    NUL = QK_KB,
+    NUL = MY_SAFE_RANGE,
     INDEX,
     DESC,
     AVS,
@@ -49,7 +49,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #endif
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case NUL:
             if (record->event.pressed) {

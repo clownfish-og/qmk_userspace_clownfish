@@ -6,25 +6,25 @@
 #ifdef RGB_MATRIX_ENABLE
 
 bool rgb_matrix_indicators_user() {
-    HSV hsv = {0, 255, 200};
+    hsv_t hsv = {0, 255, 200};
 
     uint8_t active_layer = get_highest_layer(layer_state);
 
     switch (active_layer) {
         case 0:
-            hsv = (HSV){0, 0, 100}; // Layer 0: WHITE
+            hsv = (hsv_t){HSV_WHITE}; // Layer 0: WHITE
             break;
         case 1:
-            hsv = (HSV){85, 255, 100}; // Layer 1: GREEN
+            hsv = (hsv_t){HSV_GREEN}; // Layer 1: GREEN
             break;
         case 2:
-            hsv = (HSV){169, 255, 100}; // Layer 2: BLUE
+            hsv = (hsv_t){HSV_BLUE}; // Layer 2: BLUE
             break;
         case 3:
-            hsv = (HSV){30, 255, 100}; // Layer 3: YELLOW
+            hsv = (hsv_t){HSV_GOLD}; // Layer 3: YELLOW
             break;
         default:
-            hsv = (HSV){0, 255, 100}; // err: RED
+            hsv = (hsv_t){HSV_RED}; // err: RED
             break;
     }
     hsv.v     = (rgb_matrix_get_val() * 70 / 200) + 30; //set indicator brightness range 30-100, vary based on RGB Matrix brightness
