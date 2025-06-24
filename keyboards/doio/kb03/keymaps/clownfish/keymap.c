@@ -5,7 +5,7 @@
 
 #ifdef RGB_MATRIX_ENABLE
 
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_user() {
     HSV hsv = {0, 255, 200};
 
     uint8_t active_layer = get_highest_layer(layer_state);
@@ -27,23 +27,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             hsv = (HSV){0, 255, 100}; // err: RED
             break;
     }
-
-    if (rgb_matrix_get_val() >= 100) {
-        hsv.v = 100;
-    } else if (rgb_matrix_get_val() <= 30) {
-        hsv.v = 30;
-    } else {
-        hsv.v = rgb_matrix_get_val();
-    }
-
-    RGB rgb = hsv_to_rgb(hsv);
-
-    for (uint8_t i = led_min; i < led_max; i++) {
-        if (HAS_FLAGS(g_led_config.flags[i], 0x08)) { // 0x08 == LED_FLAG_INDICATOR
-            rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
-        }
-    }
-
+    hsv.v     = (rgb_matrix_get_val() * 70 / 200) + 30; //set indicator brightness range 30-100, vary based on RGB Matrix brightness
+    rgb_t rgb = hsv_to_rgb(hsv);
+    rgb_matrix_set_color(9, rgb.r, rgb.g, rgb.b);
     return false;
 }
 
