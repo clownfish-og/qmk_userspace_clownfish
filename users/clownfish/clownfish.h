@@ -8,19 +8,18 @@
 #include "version.h"
 
 enum clownfish_keycodes {
-    KC_MAKE = SAFE_RANGE,
+    KC_MAKE = QK_KB_0,
     ALT_TAB,
     EXTEND,
     CHROME,
     SPAM,
     VENV,
+    CLANGD,
     DBL_0,
     CLOWNFISH_RANGE
 };
-
-#ifndef RGB_MATRIX_ENABLE
-    #define MY_SAFE_RANGE CLOWNFISH_RANGE
-#endif
 #ifdef RGB_MATRIX_ENABLE
     #include "rgb_keys.h"
+#else
+    #define MY_SAFE_RANGE CLOWNFISH_RANGE
 #endif

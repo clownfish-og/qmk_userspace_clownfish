@@ -63,6 +63,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("source .venv/bin/activate\n"); // Activates Python virtual environment
             }
             return false;
+        case CLANGD:
+            if (record->event.pressed) {
+                SEND_STRING("qmk compile --compiledb -kb  -km " SS_DOWN(X_LCTL) SS_TAP(X_LEFT) SS_UP(X_LCTL) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
+            }
+            return false;
         case DBL_0:
             if (record->event.pressed) {
                 SEND_STRING("00");

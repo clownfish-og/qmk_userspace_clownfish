@@ -16,11 +16,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "rgb_keys.h"
 
 enum custom_keycodes {
-    LFISH,
+    LFISH = MY_SAFE_RANGE,
     BUP,
     LOVE,
     DRAGON,
-    THIS,
+    CFOG,
     KEK
 };
 
@@ -43,9 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                UG_HUED, UG_VALD, UG_SATD),
 };
 
-uint8_t mod_state;
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
-    mod_state = get_mods();
     switch (keycode) {
         case LFISH:
                 if (record->event.pressed) {
@@ -79,12 +77,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("bupDragon ");
             }
             return false;
-        case THIS:
+        case CFOG:
             if (record->event.pressed) {
                 if (host_keyboard_led_state().caps_lock) {
                     tap_code(KC_CAPS);
                 }
-                SEND_STRING("tinosThis ");
+                SEND_STRING("koby36Clownfishog ");
             }
             return false;
         case KEK:
