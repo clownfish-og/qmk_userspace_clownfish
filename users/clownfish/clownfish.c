@@ -14,9 +14,6 @@ __attribute__((weak)) bool process_record_rgb(uint16_t keycode, keyrecord_t *rec
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-        if (!(process_record_keymap(keycode, record) && process_record_rgb(keycode, record))) {
-        return false;
-    }
     switch (keycode) {
         case KC_MAKE:  // Compiles the firmware, and adds the flash command based on keyboard bootloader
             if (!record->event.pressed) {
@@ -28,7 +25,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     SEND_STRING(" --compiledb");
                 }
                 if ((temp_mod | temp_osm) & MOD_MASK_CTRL) {
-                    SEND_STRING(" -j8 --output-sync");
+                    SEND_STRING(" -j 8");
                 }
                 tap_code(KC_ENT);
                 set_mods(temp_mod);

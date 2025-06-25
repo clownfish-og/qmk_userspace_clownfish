@@ -3,6 +3,8 @@
 
 #include "rgb_keys.h"
 
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+
 bool process_record_rgb(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case SIMPLGT:
@@ -69,5 +71,5 @@ bool process_record_rgb(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-    return process_record_user(keycode, record);
+    return process_record_keymap(keycode, record);
 }
