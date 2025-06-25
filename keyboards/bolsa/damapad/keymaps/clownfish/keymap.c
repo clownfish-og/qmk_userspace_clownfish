@@ -15,9 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "keycodes.h"
-#include "quantum.h"
 #include QMK_KEYBOARD_H
+#include "clownfish.h"
 
 enum my_keycodes {
     NUL = MY_SAFE_RANGE,

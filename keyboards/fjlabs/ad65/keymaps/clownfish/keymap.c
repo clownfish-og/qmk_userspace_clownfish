@@ -14,40 +14,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes {
-    CHROME = QK_KB_0,
-    SPAM,
-    VENV,
-    CLANGD
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case CHROME:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LALT(" ") SS_DELAY(200) ">chrome.exe" SS_DELAY(150) SS_TAP(X_ENT));
-            }
-            return false;
-        case SPAM:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LCTL("acvvvvv"));
-            }
-            return false;
-        case VENV:
-            if (record->event.pressed) {
-                SEND_STRING("source .venv/bin/activate\n");
-            }
-            return false;
-        case CLANGD:
-            if (record->event.pressed) {
-                SEND_STRING("qmk compile --compiledb -kb  -km " SS_DOWN(X_LCTL) SS_TAP(X_LEFT) SS_UP(X_LCTL) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
-            }
-            return false;
-        default:
-        return true; // Process all other keycodes normally
-    }
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_65_ansi_blocker(
@@ -63,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         QK_GESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, CHROME,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_SCRL, KC_PAUS, _______, _______, KC_PGUP,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          SPAM,    KC_PGDN,
-        _______,          _______, _______, CLANGD,  VENV,    _______, _______, _______, _______, _______, _______, _______, KC_VOLU, KC_MUTE,
+        _______,          _______, _______, KC_MAKE,  VENV,    _______, _______, _______, _______, _______, _______, _______, KC_VOLU, KC_MUTE,
         _______, _______, _______,                                     _______,                   _______, _______, KC_MPRV, KC_VOLD, KC_MNXT
     ),
 

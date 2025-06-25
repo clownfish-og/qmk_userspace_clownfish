@@ -14,40 +14,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes {
-    CHROME = QK_KB_0,
-    SPAM,
-    VENV,
-    CLANGD
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case CHROME:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LALT(" ") SS_DELAY(200) ">chrome.exe" SS_DELAY(150) SS_TAP(X_ENT));
-            }
-            return false;
-        case SPAM:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LCTL("acvvvvv"));
-            }
-            return false;
-        case VENV:
-            if (record->event.pressed) {
-                SEND_STRING("source .venv/bin/activate\n");
-            }
-            return false;
-        case CLANGD:
-            if (record->event.pressed) {
-                SEND_STRING("qmk compile --compiledb -kb  -km " SS_DOWN(X_LCTL) SS_TAP(X_LEFT) SS_UP(X_LCTL) SS_TAP(X_LEFT) SS_TAP(X_LEFT));
-            }
-            return false;
-        default:
-        return true; // Process all other keycodes normally
-    }
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_65_ansi_blocker_tsangan(

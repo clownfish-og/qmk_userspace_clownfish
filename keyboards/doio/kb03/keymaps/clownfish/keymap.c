@@ -4,6 +4,7 @@
 #include QMK_KEYBOARD_H
 
 #ifdef RGB_MATRIX_ENABLE
+#include "rgb_keys.h"
 
 bool rgb_matrix_indicators_user() {
     hsv_t hsv = {0, 255, 200};
@@ -35,72 +36,6 @@ bool rgb_matrix_indicators_user() {
 
 #endif
 
-enum custom_keycodes {
-    SIMPLGT = QK_KB_0,
-    PROJECT,
-    CHROME
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case SIMPLGT:
-            if (record->event.pressed) {
-                switch(rgb_matrix_get_mode()) {
-                    case RGB_MATRIX_GRADIENT_UP_DOWN:
-                        rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-                        rgb_matrix_sethsv(180, 255, 200);
-                        break;
-                    case RGB_MATRIX_SOLID_COLOR:
-                        rgb_matrix_mode(RGB_MATRIX_BREATHING);
-                        rgb_matrix_sethsv(180, 255, 200);
-                        break;
-                    case RGB_MATRIX_BREATHING:
-                        rgb_matrix_mode(RGB_MATRIX_DUAL_BEACON);
-                        rgb_matrix_sethsv(127, 255, 200);
-                        break;
-                    case RGB_MATRIX_DUAL_BEACON:
-                        rgb_matrix_mode(RGB_MATRIX_GRADIENT_UP_DOWN);
-                        rgb_matrix_sethsv(52, 255, 200);
-                        break;
-                    default:
-                        rgb_matrix_mode(RGB_MATRIX_DUAL_BEACON);
-                        rgb_matrix_sethsv(127, 255, 200);
-                        break;
-                    }
-            }
-            return false;
-        case PROJECT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LGUI("P") SS_DELAY(400) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(200) SS_TAP(X_ENT) SS_DELAY(200) SS_TAP(X_ESC) );
-            }
-            return false;
-        case CHROME:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LALT(" ") SS_DELAY(150) ">chrome.exe" SS_DELAY(150) SS_TAP(X_ENT));
-            }
-            return false;
-        case UG_TOGG:
-            if (record->event.pressed) {
-                switch (rgb_matrix_get_flags()) {
-                    case LED_FLAG_ALL: {
-                        rgb_matrix_set_flags(LED_FLAG_NONE);
-                        rgb_matrix_set_color_all(0, 0, 0);
-                    } break;
-                    default: {
-                        rgb_matrix_set_flags(LED_FLAG_ALL);
-                    } break;
-                }
-            }
-            if (!rgb_matrix_is_enabled()) {
-                rgb_matrix_set_flags(LED_FLAG_ALL);
-                rgb_matrix_enable();
-            }
-            return false;
-        default:
-        return true; // Process all other keycodes normally
-    }
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         TO(1),   UG_HUEU,  SIMPLGT,  UG_SATU,   KC_RSFT
@@ -109,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TO(2),   KC_ENT,   C(KC_C), C(S(KC_V)), C(KC_Z)
     ),
     [2] = LAYOUT(
-        TO(3),   CHROME,   UG_TOGG,  G(KC_D),   PROJECT
+        TO(3),   CHROME,   UG_TOGG,  G(KC_D),   EXTEND
     ),
     [3] = LAYOUT(
         TO(0),   KC_WBAK,  KC_WHOM,  KC_WFWD,   KC_MPLY
