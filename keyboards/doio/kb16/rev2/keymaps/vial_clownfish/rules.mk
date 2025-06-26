@@ -7,3 +7,5 @@ VIALRGB_ENABLE = yes
 LTO_ENABLE = no
 SRC += oled_layers.c
 SRC += better_led.c
+
+USER_NAME := clownfish

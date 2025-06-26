@@ -15,27 +15,17 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "keychron_common.h"
+#include "rgb_keys.h"
 #include <lib/lib8tion/lib8tion.h>
 
 // clang-format off
 enum indicator_keycodes {
-    CAPSLKD = 0x7E0B,  //Keychron keycodes +1
+    CAPSLKD = MY_SAFE_RANGE,  //Keychron keycodes +1
     CAPSLKU,
     NUMLKOD,
     NUMLKOU,
     SCRLLKD,
-    SCRLLKU,
-    MY_SAFE_RANGE
-};
-
-enum my_keycodes {
-    SPAM = MY_SAFE_RANGE,
-    CHROME,
-    EXTEND,
-    RMP,
-    VENV,
-    CLANGD
+    SCRLLKU
 };
 
 enum layers{
@@ -54,12 +44,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,              KC_P1,    KC_P2,    KC_P3,
         KC_LCTL,  KC_LWIN,  KC_LALT,                                KC_SPC,                                 KC_RALT,  KC_RWIN,  MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,              KC_PDOT,  KC_PENT),
     [MAC_FN] = LAYOUT_ansi_108(
-        _______,            KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RM_TOGG,  _______,  _______,  _______,  SPAM,
+        _______,            KC_BRID,  KC_BRIU,  _______,  _______,  RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RM_TOGG,  _______,  _______,  _______,  SPAM,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  CAPSLKU,  SCRLLKU,  NUMLKOU,  _______,  _______,  _______,  _______,
         RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  CAPSLKD,  SCRLLKD,  NUMLKOD,  RM_SATU,  RM_VALU,  RM_SPDU,
         _______,  RM_PREV,  RM_VALD,  RM_HUED,  RM_SATD,  RM_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,              _______,                                RM_HUED,  _______,  RM_HUEU,  RM_NEXT,
-        _______,            _______,  _______,  CLANGD,   VENV,    _______,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,            _______,            RM_SATD,  RM_VALD,  RM_SPDD,
-        _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  RM_TOGG,            RMP,      RM_PREV),
+        _______,            _______,  _______,  CLANGD,   VENV,     _______,  NK_TOGG,  KC_MAKE,  _______,  _______,  _______,              _______,            _______,            RM_SATD,  RM_VALD,  RM_SPDD,
+        _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  RM_TOGG,            RM_M_PL,  RM_PREV),
     [WIN_BASE] = LAYOUT_ansi_108(
         KC_ESC,             KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   KC_PSCR,  KC_SCRL,  KC_PAUSE, CHROME,   KC_MUTE,  G(KC_D),  KC_EQL,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
@@ -68,12 +58,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,              KC_P1,    KC_P2,    KC_P3,
         KC_LCTL,  KC_LWIN,  KC_LALT,                                KC_SPC,                                 KC_RALT,  KC_RWIN,  MO(WIN_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,              KC_PDOT,  KC_PENT),
     [WIN_FN] = LAYOUT_ansi_108(
-        _______,            KC_BRID,  KC_BRIU,  KC_TASK,  KC_FLXP,  RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RM_TOGG,  _______,  _______,  _______,  SPAM,
+        _______,            KC_BRID,  KC_BRIU,  _______,  _______,  RM_VALD,  RM_VALU,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  _______,  _______,  RM_TOGG,  _______,  _______,  _______,  SPAM,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  CAPSLKU,  SCRLLKU,  NUMLKOU,  _______,  _______,  _______,  _______,
         RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  CAPSLKD,  SCRLLKD,  NUMLKOD,  RM_SATU,  RM_VALU,  RM_SPDU,
         _______,  RM_PREV,  RM_VALD,  RM_HUED,  RM_SATD,  RM_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,              _______,                                RM_HUED,  _______,  RM_HUEU,  RM_NEXT,
-        _______,            _______,  _______,  CLANGD,   VENV,    _______,  NK_TOGG,  _______,  _______,  _______,  _______,              _______,            _______,            RM_SATD,  RM_VALD,  RM_SPDD,
-        _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  RM_TOGG,            RMP,      RM_PREV),
+        _______,            _______,  _______,  CLANGD,   VENV,     _______,  NK_TOGG,  KC_MAKE,  _______,  _______,  _______,              _______,            _______,            RM_SATD,  RM_VALD,  RM_SPDD,
+        _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______,  RM_TOGG,            RM_M_PL,  RM_PREV),
 };
 // clang-format on
 
@@ -124,21 +114,21 @@ eeconfig_read_user_datablock(&indi);
 #define SCROLL_LOCK_LED_INDEX 14
 
 #if defined(RGB_MATRIX_ENABLE) && (defined(CAPS_LOCK_LED_INDEX) || defined(NUM_LOCK_LED_INDEX) || defined(SCROLL_LOCK_LED_INDEX))
-bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    HSV hsv;
-    // RGB_MATRIX_INDICATOR_SET_COLOR(index, red, green, blue);
+bool rgb_matrix_indicators_user(void) {
+    hsv_t hsv;
+    // rgb_matrix_set_color(index, red, green, blue);
 #    if defined(CAPS_LOCK_LED_INDEX)
     if (host_keyboard_led_state().caps_lock) {
         hsv.h = indi.cap_h;
         hsv.s = indi.cap_s;
         hsv.v = RGB_MATRIX_MAXIMUM_BRIGHTNESS;
-        RGB rgb = hsv_to_rgb(hsv);
-        RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX, rgb.r, rgb.g, rgb.b);
-        RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX2, rgb.r, rgb.g, rgb.b);
+        rgb_t rgb = hsv_to_rgb(hsv);
+        rgb_matrix_set_color(CAPS_LOCK_LED_INDEX, rgb.r, rgb.g, rgb.b);
+        rgb_matrix_set_color(CAPS_LOCK_LED_INDEX2, rgb.r, rgb.g, rgb.b);
     } else {
         if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX, 0, 0, 0);
-            RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX2, 0, 0, 0);
+            rgb_matrix_set_color(CAPS_LOCK_LED_INDEX, 0, 0, 0);
+            rgb_matrix_set_color(CAPS_LOCK_LED_INDEX2, 0, 0, 0);
         }
     }
 #    endif // CAPS_LOCK_LED_INDEX
@@ -147,13 +137,13 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         hsv.h = indi.num_h;
         hsv.s = indi.num_s;
         hsv.v = RGB_MATRIX_MAXIMUM_BRIGHTNESS;
-        RGB rgb = hsv_to_rgb(hsv);
-        RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX,  rgb.r, rgb.g, rgb.b);
-        RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX2,  rgb.r, rgb.g, rgb.b);
+        rgb_t rgb = hsv_to_rgb(hsv);
+        rgb_matrix_set_color(NUM_LOCK_LED_INDEX,  rgb.r, rgb.g, rgb.b);
+        rgb_matrix_set_color(NUM_LOCK_LED_INDEX2,  rgb.r, rgb.g, rgb.b);
     } else {
         if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX, 0, 0, 0);
-            RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX2, 0, 0, 0);
+            rgb_matrix_set_color(NUM_LOCK_LED_INDEX, 0, 0, 0);
+            rgb_matrix_set_color(NUM_LOCK_LED_INDEX2, 0, 0, 0);
         }
     }
 #    endif // NUM_LOCK_LED_INDEX
@@ -163,10 +153,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         hsv.s = indi.scr_s;
         hsv.v = RGB_MATRIX_MAXIMUM_BRIGHTNESS;
         RGB rgb = hsv_to_rgb(hsv);
-        RGB_MATRIX_INDICATOR_SET_COLOR(SCROLL_LOCK_LED_INDEX,  rgb.r, rgb.g, rgb.b);
+        rgb_matrix_set_color(SCROLL_LOCK_LED_INDEX,  rgb.r, rgb.g, rgb.b);
     } else {
         if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(SCROLL_LOCK_LED_INDEX, 0, 0, 0);
+            rgb_matrix_set_color(SCROLL_LOCK_LED_INDEX, 0, 0, 0);
         }
     }
 #    endif // SCROLL_LOCK_LED_INDEX
@@ -174,31 +164,10 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 }
 #endif // RGB_MATRIX_ENABLE...
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!process_record_keychron(keycode, record)) {
-        return false;
-    }
-
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     bool shifted = get_mods() & MOD_MASK_SHIFT;
 
     switch (keycode) {
-        case RM_TOGG:
-            if (record->event.pressed) {
-                switch (rgb_matrix_get_flags()) {
-                    case LED_FLAG_ALL: {
-                        rgb_matrix_set_flags(LED_FLAG_NONE);
-                        rgb_matrix_set_color_all(0, 0, 0);
-                    } break;
-                    default: {
-                        rgb_matrix_set_flags(LED_FLAG_ALL);
-                    } break;
-                }
-            }
-            if (!rgb_matrix_is_enabled()) {
-                rgb_matrix_set_flags(LED_FLAG_ALL);
-                rgb_matrix_enable();
-            }
-            return false;
         case CAPSLKU:
             if (record->event.pressed) {
                 if (shifted) {
@@ -259,40 +228,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 eeconfig_update_user_datablock(&indi);
             }
             return false;
-        case SPAM:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LCTL("acvvvvv"));
-            }
-            return false;
-        case CHROME:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LALT(" ") SS_DELAY(200) ">chrome.exe" SS_DELAY(200) SS_TAP(X_ENT));
-            }
-            return false;
-        case EXTEND:
-            if (record->event.pressed) {
-                SEND_STRING(SS_LGUI("P") SS_DELAY(500) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(200) SS_TAP(X_ENT) SS_DELAY(400) SS_TAP(X_ESC));
-            }
-            return false;
-        case RMP:
-            if (record->event.pressed) {
-                if (rgb_matrix_is_enabled()) rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-            }
-            return false;
-        case VENV:
-            if (record->event.pressed) {
-                SEND_STRING("source .venv/bin/activate\n");
-            }
-            return false;
-        case CLANGD:
-            if (record->event.pressed) {
-                SEND_STRING("qmk compile -kb  -km  --compiledb" SS_TAP(X_HOME) SS_DOWN(X_LCTL) SS_TAP(X_RIGHT) SS_TAP(X_RIGHT) SS_TAP(X_RIGHT) SS_UP(X_LCTL) SS_TAP(X_RIGHT));
-            }
-            return false;
     }
     return true;
-}
-
-void housekeeping_task_user(void) {
-    housekeeping_task_keychron();
 }

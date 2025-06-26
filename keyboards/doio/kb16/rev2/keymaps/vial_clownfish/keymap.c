@@ -16,6 +16,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "rgb_keys.h"
 
 // OLED animation
 #include "oled_layers.h"
@@ -53,16 +54,6 @@ const char *layers[] = {
     "LIGHTING"
 };
 
-enum my_keycodes {
-    DBL_0 = QK_KB,
-    ALT_TAB,
-    EXTEND,
-    SIMPLGT,
-    RMD_PLN,
-    RMD_BOX,
-    RMD_SRL,
-    RMD_CENT
-};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*  NUM
@@ -278,7 +269,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 RM_SATU, RM_VALU, RM_SPDU, RM_TOGG, RM_TOGG,
                 RM_HUED, SIMPLGT, RM_HUEU, RM_NEXT, SIMPLGT,
                 RM_SATD, RM_VALD, RM_SPDD, RM_PREV, RM_TOGG,
-                RMD_PLN, RMD_BOX, RMD_SRL, RMD_CENT
+                RM_M_PL, RM_M_AM, RM_M_RB, RM_M_CN
             ),
 };
 
@@ -299,97 +290,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 };
 #endif
-
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case ALT_TAB: // Super ALT↯TAB processing
-        if (record->event.pressed) {
-            if (!is_alt_tab_active) {
-                is_alt_tab_active = true;
-                if (get_highest_layer(MAC)) {
-                    register_code(KC_LCMD);
-                } else {
-                    register_code(KC_LALT);
-                }
-                alt_tab_timer = timer_read();
-                register_code(KC_TAB);
-            } else {
-                unregister_code(KC_TAB);
-            }
-        }
-            return false;
-        case SIMPLGT: // Simplified personal preferred lighting mode switching
-            if (record->event.pressed) {
-                switch(rgb_matrix_get_mode()) {
-                    case RGB_MATRIX_GRADIENT_UP_DOWN:
-                        rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-                        rgb_matrix_sethsv(180, 255, 200);
-                        break;
-                    case RGB_MATRIX_SOLID_COLOR:
-                        rgb_matrix_mode(RGB_MATRIX_BREATHING);
-                        rgb_matrix_sethsv(180, 255, 200);
-                        break;
-                    case RGB_MATRIX_BREATHING:
-                        rgb_matrix_mode(RGB_MATRIX_DUAL_BEACON);
-                        rgb_matrix_sethsv(127, 255, 200);
-                        break;
-                    case RGB_MATRIX_DUAL_BEACON:
-                        rgb_matrix_mode(RGB_MATRIX_GRADIENT_UP_DOWN);
-                        rgb_matrix_sethsv(52, 255, 200);
-                        break;
-                    default:
-                        rgb_matrix_mode(RGB_MATRIX_DUAL_BEACON);
-                        rgb_matrix_sethsv(127, 255, 200);
-                        break;
-                    }
-            }
-            return false;
-        case DBL_0:
-            if (record->event.pressed) {
-                SEND_STRING_DELAY("00", 50);
-            }
-            return false;
-        case RMD_PLN:
-            if (record->event.pressed) {
-                rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-            }
-            return false;
-        case RMD_BOX:
-            if (record->event.pressed) {
-                rgb_matrix_mode(RGB_MATRIX_ALPHAS_MODS);
-            }
-            return false;
-        case RMD_SRL:
-            if (record->event.pressed) {
-                rgb_matrix_mode(RGB_MATRIX_RAINBOW_PINWHEELS);
-            }
-            return false;
-        case RMD_CENT:
-            if (record->event.pressed) {
-                rgb_matrix_mode(RGB_MATRIX_CYCLE_OUT_IN);
-            }
-            return false;
-        case EXTEND: // Extended desktop (Win+P)
-            if (record->event.pressed) {
-                SEND_STRING(SS_LGUI("p") SS_DELAY(400) SS_TAP(X_DOWN) SS_DELAY(100) SS_TAP(X_DOWN) SS_DELAY(200) SS_TAP(X_ENT) SS_DELAY(200) SS_TAP(X_ESC) );
-            }
-            return false;
-        default:
-            return true; // Process all other keycodes normally
-    }
-}
-
-void matrix_scan_user(void) {
-  if (is_alt_tab_active) { // Super ALT↯TAB timer
-    if (timer_elapsed(alt_tab_timer) > 1000) {
-      unregister_code(KC_LALT);
-      is_alt_tab_active = false;
-    }
-  }
-}
 
 #ifdef OLED_ENABLE
     bool oled_task_user(void) {
