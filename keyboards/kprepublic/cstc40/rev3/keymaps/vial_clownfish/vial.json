@@ -4,6 +4,21 @@
         "rows": 4,
         "cols": 12
     },
+  "customKeycodes": [
+    {"name": "MAKE",    "title": "qmk compile board",                "shortName": "MAKE"},
+    {"name": "ALT_TAB", "title": "Super ALT↯TAB",                    "shortName": "ALTAB"},
+    {"name": "EXTEND",  "title": "extended display toggle",          "shortName": "XTND"},
+    {"name": "CHROME",  "title": "Powertoys Run Chrome Browser",     "shortName": "CHRME"},
+    {"name": "SPAM",    "title": "Copy All and Paste x5",            "shortName": "SPAM"},
+    {"name": "VENV",    "title": "source .venv/bin/activate",        "shortName": "VENV"},
+    {"name": "CLANGD",  "title": "qmk compile --compiledb -kb  -km", "shortName": "CLANGD"},
+    {"name": "DBL_0",   "title": "00",                               "shortName": "DBL_0"},
+    {"name": "SMPLGT",  "title": "simple light mode cycle",          "shortName": "LGHT"},
+    {"name": "RM_PL",   "title": "rgb matrix mode plain",            "shortName":"RM_P"},
+    {"name": "RM_AM",   "title": "rgb matrix mode alphas mods",      "shortName": "RM_AM"},
+    {"name": "RM_RB",   "title": "rgb matrix mode cycle spiral",     "shortName": "RM_RB"},
+    {"name": "RM_CN",   "title": "rgb matrix mode cycle out in",     "shortName": "RM_CN"}
+  ],
     "layouts": {
         "keymap": [
             [

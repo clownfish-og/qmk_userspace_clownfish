@@ -6,3 +6,5 @@
 
 #define VIAL_UNLOCK_COMBO_ROWS { 4, 0 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 14 }
+
+#define EECONFIG_USER_DATA_SIZE 6

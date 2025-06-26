@@ -15,6 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "rgb_keys.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -86,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [3] = LAYOUT_planck_mit(
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
-    UG_TOGG,  UG_NEXT,  UG_VALU,  UG_HUEU,  UG_SATU,  UG_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,
-    _______,  UG_PREV,  UG_VALD,  UG_HUED,  UG_SATD,  UG_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,
-    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+    RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  RM_PREV,  RM_VALD,  RM_HUED,  RM_SATD,  RM_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,
+    RM_M_PL,  RM_M_AM,  RM_M_RB,  RM_M_CN,  SIMPLGT,       _______,       _______,  _______,  _______,  _______,  _______
 )
 
 };
