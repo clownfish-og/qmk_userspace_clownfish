@@ -8,6 +8,8 @@
         ["fjlabs/ad65", "clownfish_tsangan"],
         ["keebio/iris/rev3", "clownfish"],
         ["keychron/v6/ansi", "clownfish"],
+        ["sneakbox/lilbae", "clownfish_bae"],
+        ["sneakbox/lilbae", "clownfish_iso"],
         ["ymdk/ymd09", "clownfish"]
     ]
 }
