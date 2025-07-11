@@ -21,6 +21,8 @@
 // OLED animation
 #include "oled_layers.h"
 
+#include "elpekenin/ledmap.h"
+
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -270,6 +272,81 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 RM_HUED, SIMPLGT, RM_HUEU, RM_NEXT, SIMPLGT,
                 RM_SATD, RM_VALD, RM_SPDD, RM_PREV, RM_TOGG,
                 RM_M_PL, RM_M_AM, RM_M_RB, RM_M_CN
+            ),
+};
+
+const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
+    [NUM] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, VIOLET
+            ),
+    [WIN] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, WHITE
+            ),
+    [WIN_FN] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, WHITE
+            ),
+    [MAC] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, WHITE
+            ),
+    [MAC_FN] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, WHITE
+            ),
+    [MEDIA] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, VIOLET
+            ),
+    [BROWSER] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, VIOLET
+            ),
+    [DISCORD] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, VIOLET
+            ),
+    [MOUSE] = LAYOUT(
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    CYAN,   BLACK,
+                YELLOW, ORANGE, RED,    VIOLET, BLACK,
+                VIOLET, VIOLET, VIOLET, WHITE
+            ),
+    [GAME] = LAYOUT(
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   WHITE
+            ),
+    [GAME_FN] = LAYOUT(
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   WHITE
+            ),
+    [LIGHT] = LAYOUT(
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS,   TRNS,
+                TRNS,   TRNS,   TRNS,   TRNS
             ),
 };
 
