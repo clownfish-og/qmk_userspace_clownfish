@@ -81,12 +81,12 @@ void eeconfig_init_user(void) {
     indi.cap_s = 255;
     indi.num_s = 0;
     indi.com_s = 255;
-    eeconfig_update_user_datablock(&indi);
+    eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
 }
 
 // Initialize the EEPROM values
 void keyboard_post_init_user(void) {
-eeconfig_read_user_datablock(&indi);
+eeconfig_read_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
 }
 
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
@@ -196,7 +196,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.cap_h = (indi.cap_h + hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case CAPSLKD:
@@ -209,7 +209,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.cap_h = (indi.cap_h - hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case NUMLKOU:
@@ -222,7 +222,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.num_h = (indi.num_h + hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case NUMLKOD:
@@ -235,7 +235,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.num_h = (indi.num_h - hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case COMBLKU:
@@ -248,7 +248,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.com_h = (indi.com_h + hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case COMBLKD:
@@ -261,7 +261,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                     }
                     indi.com_h = (indi.com_h - hue_step);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
     }
