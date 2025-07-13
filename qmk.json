@@ -1,7 +1,6 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["doio/kb03", "vial_clownfish"],
         ["kprepublic/cstc40/rev3", "vial_clownfish"],
         ["wind/x98", "vial_clownfish"]
     ]
