@@ -90,12 +90,12 @@ void eeconfig_init_user(void) {
     indi.cap_s = 255;
     indi.num_s = 255;
     indi.scr_s = 255;
-    eeconfig_update_user_datablock(&indi);
+    eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
 }
 
 // Initialize the EEPROM values
 void keyboard_post_init_user(void) {
-eeconfig_read_user_datablock(&indi);
+eeconfig_read_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
 }
 
 # if defined CAPS_LOCK_LED_INDEX
@@ -175,7 +175,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.cap_h = (indi.cap_h + RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case CAPSLKD:
@@ -185,7 +185,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.cap_h = (indi.cap_h - RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case NUMLKOU:
@@ -195,7 +195,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.num_h = (indi.num_h + RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case NUMLKOD:
@@ -205,7 +205,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.num_h = (indi.num_h - RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case SCRLLKU:
@@ -215,7 +215,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.scr_h = (indi.scr_h + RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
         case SCRLLKD:
@@ -225,7 +225,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     indi.scr_h = (indi.scr_h - RGB_MATRIX_HUE_STEP);
                 }
-                eeconfig_update_user_datablock(&indi);
+                eeconfig_update_user_datablock(&indi, 0, EECONFIG_USER_DATA_SIZE);
             }
             return false;
     }
