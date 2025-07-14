@@ -202,3 +202,4 @@ const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 
 };
+
