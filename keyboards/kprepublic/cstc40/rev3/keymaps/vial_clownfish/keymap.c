@@ -16,7 +16,6 @@
 
 #include QMK_KEYBOARD_H
 #include "rgb_keys.h"
-#include "elpekenin/ledmap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -129,77 +128,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
 )
 };
-
-const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
-[0] = LAYOUT_planck_mit(
-    CYAN,     CYAN,     CYAN,     CYAN,     CYAN,     RED,      ORANGE,   YELLOW,   VIOLET,   VIOLET,   VIOLET,   VIOLET,
-    CYAN,     CYAN,     CYAN,     CYAN,     RED,      ORANGE,   YELLOW,   VIOLET,   VIOLET,   VIOLET,   VIOLET,   VIOLET,
-    CYAN,     CYAN,     CYAN,     RED,      ORANGE,   YELLOW,   VIOLET,   VIOLET,   VIOLET,   VIOLET,   VIOLET,   VIOLET,
-    CYAN,     CYAN,     RED,      ORANGE,   YELLOW,         VIOLET,       VIOLET,   VIOLET,   VIOLET,   VIOLET,   VIOLET
-),
-
-[1] = LAYOUT_planck_mit(
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    BLACK,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    BLACK,    TRNS,     TRNS,     BLACK,    BLACK,
-    WHITE,    WHITE,    WHITE,    WHITE,    WHITE,        TRNS,           TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[2] = LAYOUT_planck_mit(
-    TRNS,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     BLUE,     TRNS,
-    TRNS,     GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    BLACK,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    GREEN,    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         WHITE,    WHITE,    WHITE,    WHITE,    WHITE
-),
-
-[3] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[4] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[5] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[6] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[7] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[8] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-),
-
-[9] = LAYOUT_planck_mit(
-    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
-    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
-)
-
-};
-
