@@ -91,8 +91,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RM_TOGG,  RM_NEXT,  RM_VALU,  RM_HUEU,  RM_SATU,  RM_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  RM_PREV,  RM_VALD,  RM_HUED,  RM_SATD,  RM_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,
     RM_M_PL,  RM_M_AM,  RM_M_RB,  RM_M_CN,  SIMPLGT,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[4] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[5] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[6] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[7] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[8] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
+),
+[9] = LAYOUT_planck_mit(
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,       _______,       _______,  _______,  _______,  _______,  _______
 )
-
 };
 
 const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -118,6 +153,48 @@ const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [3] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[4] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[5] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[6] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[7] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[8] = LAYOUT_planck_mit(
+    RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
+    TRNS,     TRNS,     TRNS,     TRNS,     TRNS,           TRNS,         TRNS,     TRNS,     TRNS,     TRNS,     TRNS
+),
+
+[9] = LAYOUT_planck_mit(
     RED,      TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,     TRNS,
