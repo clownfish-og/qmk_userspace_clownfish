@@ -59,8 +59,8 @@
     "max_brightness": 240,
     "sleep": true,
     "default": {
-        "animation":"rainbow_moving_chevron",
-        "val": 160
+        "animation":"solid_color",
+        "hue": 24
     },
     "animations": {
         "solid_color": true,

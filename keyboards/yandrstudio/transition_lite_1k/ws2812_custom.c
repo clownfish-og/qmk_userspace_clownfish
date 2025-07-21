@@ -29,7 +29,7 @@
 ws2812_led_t ws2812_leds[WS2812_LED_COUNT];
 
 // LED counts
-#define MATRIX_LED_COUNT 90      // RGB matrix LEDs on B13
+#define MATRIX_LED_COUNT 91      // RGB matrix LEDs on B13
 #define UNDERGLOW_LED_COUNT 26   // RGBLIGHT LEDs on A2
 
 // LED buffers for both chains
