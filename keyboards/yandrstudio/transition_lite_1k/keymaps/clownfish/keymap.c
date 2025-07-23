@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "rgb_keys.h"
 #include "elpekenin/ledmap.h"
 
-#define CHART = CHARTREUSE
+#define CHART CHARTREUSE
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_tkl_ansi(
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,   KC_DEL,  KC_END,  KC_PGDN,
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,                   KC_RSFT,            KC_UP,
-        KC_LCTL, KC_LGUI, KC_LALT,                            LT(1, KC_SPC),                    KC_RALT, KC_RGUI, MO(1), KC_RCTL,   KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL, KC_LGUI, KC_LALT,                            LT(1, KC_SPC),                      KC_RALT, KC_RGUI, MO(1),   KC_RCTL,   KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [1] = LAYOUT_tkl_ansi(
         // 1     2        3        4        5        6        7        8        9        10       11       12        13      14         15       16       17
@@ -37,60 +37,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, UG_NEXT, UG_VALU, UG_HUEU, UG_SATU, UG_SPDU, _______, _______, _______, _______, _______, _______, _______, _______,   RM_HUEU, RM_SATU, RM_SPDU,
         UG_TOGG, UG_PREV, UG_VALD, UG_HUED, UG_SATD, UG_SPDD, _______, _______, _______, _______, _______, _______, _______, _______,   RM_HUED, RM_SATD, RM_SPDD,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          SPAM,
-        _______, _______, _______, CLANGD,  VENV   , _______, _______, _______, _______, _______, _______,                   _______,            RM_VALU,
-        _______, _______, _______,                            _______,                            _______, MO(2),_______, CHROME,     RM_PREV,RM_VALD, RM_NEXT
+        _______, _______, _______, CLANGD,  VENV   , _______, _______, KC_MAKE, _______, _______, _______,                   _______,            RM_VALU,
+        PDF(2),  _______, _______,                            _______,                            _______, _______, _______, CHROME,     RM_PREV,RM_VALD, RM_NEXT
     ),
     [2] = LAYOUT_tkl_ansi(
         // 1     2        3        4        5        6        7        8        9        10       11       12        13      14         15       16       17
-        KC_MAKE,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, EE_CLR,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,            _______,
-        _______, _______, _______,                            _______,                            _______, _______, _______, _______,   _______, _______, _______
+        KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,    ALT_TAB, KC_SCRL, KC_PAUS,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,   KC_INS,  KC_HOME, KC_PGUP,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,   KC_DEL,  KC_END,  KC_PGDN,
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,                   KC_RSFT,            KC_UP,
+        KC_LCTL, KC_LGUI, KC_LALT,                            LT(1, KC_SPC),                      KC_RALT, KC_RGUI, MO(3),   KC_RCTL,   KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [3] = LAYOUT_tkl_ansi(
         // 1     2        3        4        5        6        7        8        9        10       11       12        13      14         15       16       17
-        _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______,            _______,
-        _______, _______, _______,                            _______,                            _______, _______, _______, _______,   _______, _______, _______
+        EXTEND,           KC_BRID, KC_BRIU, _______, _______, _______, _______, _______, _______, _______, KC_MUTE, KC_VOLD, KC_VOLU,   _______, RM_TOGG, _______,
+        _______, UG_NEXT, UG_VALU, UG_HUEU, UG_SATU, UG_SPDU, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
+        UG_TOGG, UG_PREV, UG_VALD, UG_HUED, UG_SATD, UG_SPDD, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          SPAM,
+        _______, _______, _______, CLANGD,  VENV   , _______, _______, KC_MAKE, _______, _______, _______,                   _______,            _______,
+        PDF(0),  _______, _______,                            _______,                            _______, _______, _______, CHROME,    _______, _______, _______
     )
 };
 
 const ledmap_color_t PROGMEM ledmap[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_tkl_ansi(
-        RED,              BLUE,    BLUE,    BLUE,    BLUE,    ROSE,    ROSE,    ROSE,    ROSE,    YELLOW,  YELLOW,  YELLOW,  YELLOW,    GREEN,   GREEN,   GREEN,
-        RED,     CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,   RED,     RED,     VIOLET,    YELLOW,CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,      YELLOW,  CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     YELLOW,  RED,     RED,     YELLOW,  RED,     RED,     BLUE,    BLUE,             YELLOW,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,                      VIOLET,             YELLOW,
-        RED,     RED,     RED,                            YELLOW,                                 RED,     RED,     RED,     RED,       ORANGE,  CHARTREUSE,   ORANGE
+        TRNS,             TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,             TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,                      TRNS,               TRNS,
+        TRNS,    TRNS,    TRNS,                               TRNS,                               TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS
     ),
     [1] = LAYOUT_tkl_ansi(
-        RED,              BLUE,    BLUE,    BLUE,    BLUE,    ROSE,    ROSE,    ROSE,    ROSE,    YELLOW,  YELLOW,  YELLOW,  YELLOW,    GREEN,   GREEN,   GREEN,
-        RED,     CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,   RED,     RED,     VIOLET,    YELLOW,CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,      YELLOW,  CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     YELLOW,  RED,     RED,     YELLOW,  RED,     RED,     BLUE,    BLUE,             YELLOW,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,                      VIOLET,             YELLOW,
-        RED,     RED,     RED,                            YELLOW,                                 RED,     RED,     RED,     RED,       ORANGE,  CHARTREUSE,   ORANGE
+        TRNS,             TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,             TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,                      TRNS,               TRNS,
+        TRNS,    TRNS,    TRNS,                               TRNS,                               TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS
     ),
     [2] = LAYOUT_tkl_ansi(
         RED,              BLUE,    BLUE,    BLUE,    BLUE,    ROSE,    ROSE,    ROSE,    ROSE,    YELLOW,  YELLOW,  YELLOW,  YELLOW,    GREEN,   GREEN,   GREEN,
-        RED,     CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,   RED,     RED,     VIOLET,    YELLOW,CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,      YELLOW,  CHARTREUSE,   RED,
+        RED,     CHART,   CHART,   CHART,   CHART,   CHART,   CHART,   CHART,   CHART,   CHART,   CHART,   RED,     RED,     VIOLET,    YELLOW,  CHART,   RED,
+        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,      YELLOW,  CHART,   RED,
         VIOLET,  RED,     RED,     RED,     YELLOW,  RED,     RED,     YELLOW,  RED,     RED,     BLUE,    BLUE,             YELLOW,
         VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,                      VIOLET,             YELLOW,
-        RED,     RED,     RED,                            YELLOW,                                 RED,     RED,     RED,     RED,       ORANGE,  CHARTREUSE,   ORANGE
+        RED,     RED,     RED,                                YELLOW,                             RED,     RED,     RED,     RED,       ORANGE,  CHART,   ORANGE
     ),
     [3] = LAYOUT_tkl_ansi(
-        RED,              BLUE,    BLUE,    BLUE,    BLUE,    ROSE,    ROSE,    ROSE,    ROSE,    YELLOW,  YELLOW,  YELLOW,  YELLOW,    GREEN,   GREEN,   GREEN,
-        RED,     CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,CHARTREUSE,   RED,     RED,     VIOLET,    YELLOW,CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,      YELLOW,  CHARTREUSE,   RED,
-        VIOLET,  RED,     RED,     RED,     YELLOW,  RED,     RED,     YELLOW,  RED,     RED,     BLUE,    BLUE,             YELLOW,
-        VIOLET,  RED,     RED,     RED,     RED,     RED,     RED,     RED,     BLUE,    BLUE,    BLUE,                      VIOLET,             YELLOW,
-        RED,     RED,     RED,                            YELLOW,                                 RED,     RED,     RED,     RED,       ORANGE,  CHARTREUSE,   ORANGE
+        TRNS,             TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,             TRNS,
+        TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,    TRNS,                      TRNS,               TRNS,
+        TRNS,    TRNS,    TRNS,                               TRNS,                               TRNS,    TRNS,    TRNS,    TRNS,      TRNS,    TRNS,    TRNS
     ),
 };
